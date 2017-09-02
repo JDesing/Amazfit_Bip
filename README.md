@@ -1,36 +1,36 @@
 # get_all_apps.sh
-This script allows on downloading all known *Mi Fit* APK from *apkmirror.com*.
-After download, each APK is unzipping and all firmwares (i.e Mili.fw, running.fw) is copied to `./fw/VERSION/`
+Este script funciona con cualquier versión de *Mi Fit* descargada de *apkmirror.com*.
+Después de descargarla, debes extraer de la APK todos los firmwares (ej. Mili.fw, running.fw) son copiados a `./fw/VERSION/`
 
-### needs
-* [xidel](http://www.videlibri.de/xidel.html)
+### Necesario
+* [Xidel](http://www.videlibri.de/xidel.html)
 
-### usage
+### Modo de Uso
 ./get_all_apps.sh [-f | -u ]
 
 ```
--u|--unzip - auto-unzip each APK and copy FW to separate directory"
--f|--force - Download APK even when corresponding file for this version already exist"
+-u|--unzip - auto-descomprime cada APK y copia el FW a un directorio separado.
+-f|--force - Fuerza la descarga de la APK incluso cuando el archivo correspondiente a esa versión ya existe.
 ```
 
 # parse_fw
-Simple script (escript) writted in Erlang. Allow extract firmware version from Mili.hr
+Script muy simple que está escrito en lenguaje "Erlang". Permite extraer la versión de firmware de Mili.hr
 
-### needs
+### Necesario
 ```bash
 apt-get install erlang
 ```
-or use [kerl](https://github.com/yrashk/kerl)
+o usa [kerl](https://github.com/yrashk/kerl)
 
-### usage
+### Modo de Uso
 ```bash
 $ ./parse_fw fw/1.8.711/Mili.fw
 #{crc32 => "F6662DE3",file_name => "Mili.fw",version => {1,0,12,0}}
 ```
 
-# Version firmwares in APKs
+# Version de firmwares en las APKs
 
-| APK Version | Mili.fw | CRC32 | Mili_hr.fw | CRC32 | running.fw | CRC32 | weight.fw | CRC32 |
+| Versión APK | Mili.fwC | RC32 | Mili_hr.fw | CRC32 | running.fw | CRC32 | weight.fw | CRC32 |
 |-------------|---------|-------|------------|-------|------------|-------|-----------|-------|
 | 1.3.412 | 1.0.9.14 | 2AA422D3 | - | - | - | - | ? |
 | 1.4.452 | 1.0.9.48 | 9A648EB8 | - | - | - | - | ? |
@@ -56,11 +56,11 @@ $ ./parse_fw fw/1.8.711/Mili.fw
 | 1.8.511 | 1.0.12.0 | F6662DE3 | 4.15.12.10 | 393A9FC2 | 0,3,3 | 4CE91321 | ? |
 | 1.8.711 | 1.0.12.0 | F6662DE3 | 4.15.12.10 | 393A9FC2 | 0,3,3 | 4CE91321 | ? |
 
-In two latest versions of Mi Fit (1.8.511 and 1.8.711) was added new firmware file - HM05.fw
+En las dos últimas versiones de Mi Fit (1.8.511 y 1.8.711) se agregó un nuevo archivo de firmware - HM05.fw
 
 # Mili.hw
 
-I'm not sure that this is correct
+No estoy seguro de si esto es correcto
 
 | offset | size | type | description |
 |--------|------|------|-------------|
