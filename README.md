@@ -4,6 +4,11 @@ Después de descargarla, debes extraer de la APK todos los firmwares (ej. Mili.f
 
 ### Necesario
 * [Xidel](http://www.videlibri.de/xidel.html)
+* GZIP
+```bash
+sudo apt-get update
+sudo apt-get install gzip
+```
 
 ### Modo de Uso
 ./get_all_apps.sh [-f | -u ]
